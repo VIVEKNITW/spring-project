@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="evenService" class="org.example.service.EvenFindService"/>
+<!--    <bean id="oddService" class="org.example.service.OddFindService"/>-->
+
+    <bean id="appcontroller" class="org.example.controller.AppController" autowire="byName">
+        <!-- Constructor Injection -->
+<!--        <constructor-arg ref="evenService"/>-->
+
+        <!-- Setter Injection -->
+<!--        <property name="setterService" ref="evenService"/>-->
+
+        <!-- Field Injection (via reflection) -->
+<!--        <property name="fieldService" ref="evenService"/>-->
+    </bean>
+
+</beans>
